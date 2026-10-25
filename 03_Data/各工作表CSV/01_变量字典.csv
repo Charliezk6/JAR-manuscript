@@ -1,0 +1,46 @@
+﻿变量,所在工作表,含义,来源
+Symbol,估计样本,股票代码（6位）,CSMAR 审计面板
+Year,估计样本,财年,CSMAR 审计面板
+E_H,估计样本,华证ESG环境（E）分项得分：结果变量,华证ESG（Mendeley开放数据集，LIN 2025）
+S_H,估计样本,华证ESG社会（S）分项得分：H3安慰剂结果,同上
+G_H,估计样本,华证ESG治理（G）分项得分：H3安慰剂结果,同上
+CPATenure,估计样本,签字合伙人组合为同一客户连续签字的年数（核心解释变量，1=首年）,CSMAR FinaAudit 签字CPA构建
+MaxIndivTenure,估计样本,个体合伙人时钟：当年签字合伙人中最长连续任职年数（H5）,r10_export.py 由 SignCPA 重建
+MinIndivTenure,估计样本,个体合伙人时钟：最短连续任职年数（H5）,同上
+AuditorTenure,估计样本,事务所连续审计年数（事务所钟，H5对照）,CSMAR 审计面板
+AuditorChange,估计样本,当年更换会计师事务所（0/1）,CSMAR 审计面板
+IsMandatoryRotation,估计样本,触发五年强制轮换（0/1）,CSMAR 审计面板
+spell,估计样本,公司×签字合伙人任期段 id（spell固定效应用，形如 000004_1）,构建生成
+Size,估计样本,总资产对数：控制变量,华证ESG数据集自带财务字段
+ROA,估计样本,总资产收益率：控制变量,同上
+Growth,估计样本,营业收入增长率：控制变量,同上
+Cash,估计样本,经营现金流比率：控制变量,同上
+lev,估计样本,资产负债率（杠杆）：控制变量,同上
+soe,估计样本,国有控股（0/1）：H4分组变量,同上
+Age_c,估计样本,上市年限：控制变量,同上
+Female,估计样本,女性董事占比/特征：控制变量,同上
+Edu,估计样本,高管教育程度特征：控制变量,同上
+Pay_gap,估计样本,高管内部薪酬差距：控制变量,同上
+AuditorName / SignCPA,04_审计签字面板,事务所全称 / 当年签字注册会计师名单（分号或顿号分隔）,CSMAR FinaAudit + 巨潮年报补采(2013-2020)
+IsBig4 / IsBig10,04_审计签字面板,国际四大 / 内资十大事务所（0/1）,CSMAR
+IsST / IsFin,04_审计签字面板,ST状态 / 金融业标志（样本筛选用）,CSMAR
+CPAChange / prior_tenure,04_审计签字面板,签字合伙人变更（0/1）/ 变更前任期,CSMAR
+IsVoluntaryRotation,04_审计签字面板,自愿轮换（0/1）,CSMAR
+E_W / S_W / G_W,03_合并面板,华证ESG wind口径分项得分,华证ESG数据集
+rating_div / env_penalty / env_hits / cap_exposed,03_合并面板,ESG评级分歧 / 环保处罚 / 环保披露命中 / 高污染行业暴露,年报PDF提取 + 华证ESG数据集
+pen,05_环保处罚,当年环保处罚次数（企业-财年）,年报披露提取
+quant_density / commit_hits / remedy_hits / boiler_ratio / digit_ratio,06_文本度量,量化语句密度 / 承诺语句 / 整改语句 / 套话占比 / 数字占比（每千字或比率）,年报文本计量（env_text_full.jsonl 上游）
+joint_deadline_cell,02_估计样本 / 09_配对样本,"联合截止单元格：签字合伙人钟=5 且事务所钟=5 的企业-年（02 表共 2,166 个，即 Table 7 Panel B 的联合单元）；计数 2,166 基于 32,208 行 clock-keyed 样本，正文主样本（31,274 行）口径为 2,018 个",由 CPATenure、AuditorTenure 生成（v21）
+pair,09_配对样本,当年签字合伙人组合（姓名排序后逗号连接）,由 04 表 SignCPA 生成（v21）
+pairsym,09_配对样本,"配对×客户 id（pair+""||""+Symbol）：配对-客户固定效应的聚类变量；分隔符为双竖线 ||，请勿按单竖线分列；Symbol 须零填充为六位字符串",构建生成（v21）
+joint_cell,09_配对样本,"单元格级联合截止标志（0/1），定义同 joint_deadline_cell；计数 2,166 基于 32,208 行 clock-keyed 样本，与正文 2,018 的差异见 DAN §8.16",由 CPATenure、AuditorTenure 生成（v21）
+joint_cluster,09_配对样本,"该配对-客户簇是否含联合截止单元格（0/1）：970 个簇=1（2,622 单元格）/ 6,781 个簇=0（16,754 单元格）",由簇内 max(joint_cell) 生成（v21）
+joint5,18_主面板,"联合五年点：CPATenure==5 且 AuditorTenure==5（0/1），企业-年层面 2,166 个；正文主样本（31,274 行）口径为 2,018 个",由 CPATenure、AuditorTenure 生成
+jointwin,18_主面板,"联合高任期窗口：CPATenure==5 且 AuditorTenure∈{4,5}（0/1），2,365 个",同上
+bal11,18_主面板,"平衡面板企业标志：该企业在 02 全样本中出现 11 个不同年度（1,203 家，13,233 行）",由 Symbol×Year 计数生成
+in_pair,18_主面板,"该企业-年是否进入 09 配对样本（19,376 行）",由与 09 合并生成
+pen_register,18_主面板,05 表处罚次数并入主面板（缺行填 0），与 03 表的 env_penalty 为不同来源，勿混用,05_环保处罚_企业年
+has_pen_row / has_text_row,18_主面板,"该企业-年是否在 05 / 06 表中有记录（0/1），用于判断零值是""无处罚""还是""无数据""",由合并生成
+mde_80,19_联合分解_Table8,80% 功效下的最小可检测效应 = 2.80 × SE,计算生成
+spec / term / coef / se / t / wcr_p / n_cells / n_clusters,19_联合分解_Table8,规格名、项名、系数、标准误、t 值、受限野生聚类自助双侧 p、单元格数、聚类数,ext_t8_final.py
+non_balanced_fall / balanced_fall / gap,20_平衡面板_构成分解,非平衡企业、平衡企业的 Y4−Y5 落差，及其差值（含各自 t 值）,ext_bal_decomp.py

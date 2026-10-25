@@ -1,0 +1,8 @@
+﻿spec,term,coef,se,t,wcr_p,n_cells,n_clusters,mde_80,scale_note
+five-year point (joint = firm clock == 5),D2,0.057,0.0561,1.02,0.29803,19376,7751,0.157,
+five-year point (joint = firm clock == 5),D2 x joint,0.5963,0.1287,4.63,0,19376,7751,0.36,
+five-year point (joint = firm clock == 5),implied joint (D2 + D2 x joint),0.6533,0.1154,5.66,0,19376,7751,0.323,
+four-or-five window,implied joint (D2 + D2 x joint),0.6221,0.1015,6.13,0,19376,7751,0.284,
+"all clusters, no interaction",D2 (all clusters),0.295,0.13,2.27,0.03,19376,7751,0.36,Corrected from an earlier output with a different clustering convention (archived SE 0.0513 against 0.130); matches manuscript Table 8.
+subsample: joint clusters only,D2 (joint subsample),1.201,0.289,4.15,<0.001,2622,970,0.81,"Archived script codes the contrast as a single +/-1 indicator, so the archived 0.5994 is one half of the fall; Table 8 reports the fall scale of 2 x 0.5994 = 1.201."
+subsample: all other clusters,D2 (other clusters),-0.161,0.148,-1.09,0.27,16754,6781,0.41,Corrected from an earlier output that duplicated the D2 main effect; matches manuscript Table 8.

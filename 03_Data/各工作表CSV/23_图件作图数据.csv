@@ -1,0 +1,44 @@
+﻿23_图件作图数据 — Figure 1 与 Figure 2 的作图坐标（DAN §8.17 存档值 + 本轮复算）,,,,,,
+"Figure 1 的 cell means / cell counts 来自 DAN §8.17 的存档块；cell-level SE 仍未存档，故 Figure 1 的 whisker 无法从本包重算（稿件图件由作者代码生成，方向与量级以 Table 8/10 为准）。Figure 2 的点位来自 §8.17 的交互设定，其 SE 已由本轮脚本 _fig2_check.py 从 18_主面板 复算补齐，95% 区间 = 点 ± 1.96 x SE（填补了 §8.17 ""cell SE 未存档"" 的缺口）。",,,,,,
+,,,,,,
+Figure 1 — 残差化 cell means（pair-firm+year FE 用于 pair 两行；firm+year FE 用于平衡面板行）,,,,,,
+Series,Clusters / firms,Cells,Clock year,Cell mean,Cell count,Cell SE (archived?)
+Joint clusters,970,2622,1,-0.202,136,not archived
+Joint clusters,970,2622,2,-0.398,223,not archived
+Joint clusters,970,2622,3,-0.269,310,not archived
+Joint clusters,970,2622,4,0.912,915,not archived
+Joint clusters,970,2622,5,-0.612,1038,not archived
+All other clusters,6781,16754,1,-0.078,2390,not archived
+All other clusters,6781,16754,2,-0.025,4461,not archived
+All other clusters,6781,16754,3,-0.046,4525,not archived
+All other clusters,6781,16754,4,0.103,3547,not archived
+All other clusters,6781,16754,5,0.078,1831,not archived
+Balanced panel,1203,13122,1,-0.032,2231,not archived
+Balanced panel,1203,13122,2,-0.038,3295,not archived
+Balanced panel,1203,13122,3,-0.042,3087,not archived
+Balanced panel,1203,13122,4,0.019,2622,not archived
+Balanced panel,1203,13122,5,0.147,1887,not archived
+,,,,,,
+Figure 2 — 相对 year-one 的隐含水平（Y2-Y5 x balanced / non-balanced 交互设定；firm+year FE、控制、企业聚类）,,,,,,
+Series,Clock year,Implied level,SE (recomputed),95% CI low,95% CI high,Source
+Non-balanced firms,1,0,0,0,0,year one base = 0
+Balanced firms,1,0,0,0,0,year one base = 0
+Non-balanced firms,2,0.1403,0.1018,-0.059228,0.339828,"recomputed, _fig2_check.py"
+Balanced firms,2,-0.0251,0.1271,-0.274216,0.224016,"recomputed, _fig2_check.py"
+Non-balanced firms,3,0.1806,0.1254,-0.06518400000000002,0.426384,"recomputed, _fig2_check.py"
+Balanced firms,3,-0.0405,0.1541,-0.342536,0.261536,"recomputed, _fig2_check.py"
+Non-balanced firms,4,0.8389,0.143,0.55862,1.11918,"recomputed, _fig2_check.py"
+Balanced firms,4,0.0507,0.167,-0.27662,0.37802,"recomputed, _fig2_check.py"
+Non-balanced firms,5,-0.3591,0.1402,-0.6338919999999999,-0.084308,"recomputed, _fig2_check.py"
+Balanced firms,5,0.1627,0.1818,-0.193628,0.519028,"recomputed, _fig2_check.py"
+,,,,,,
+Figure 2 的落差（year four minus year five，正 = 披露下降）,,,,,,
+Series,Fall,SE,t,MDE (80%),稿件写法,备注
+Non-balanced firms,1.198,0.118,10.19,0.33,+1.198,复算 1.1979 → 三位小数 1.198（第五轮判定：图不动，文字以 1.198 为准）
+Balanced firms,-0.112,0.127,-0.88,0.356,-0.112,复算 -0.1120
+,,,,,,
+Pre-trend check（同年两组的隐含落差之差）,,,,,,
+Quantity,Estimate,SE,t,MDE (80%),,
+Y2→Y3 difference-in-differences,-0.056,0.151,-0.37,0.423,,
+Y3→Y4 difference-in-differences,-0.567,0.162,-3.51,,,
+Y4→Y5 difference-in-differences (gap),1.31,0.173,7.56,,,

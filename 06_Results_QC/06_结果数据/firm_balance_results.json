@@ -1,0 +1,306 @@
+{
+ "balance_table": [
+  {
+   "var": "soe",
+   "joint": 0.2415,
+   "other": 0.3331,
+   "std_diff": -0.203,
+   "t": -6.53
+  },
+  {
+   "var": "Size",
+   "joint": 21.9164,
+   "other": 22.2728,
+   "std_diff": -0.306,
+   "t": -9.83
+  },
+  {
+   "var": "ROA",
+   "joint": 0.0437,
+   "other": 0.037,
+   "std_diff": 0.154,
+   "t": 4.92
+  },
+  {
+   "var": "Growth",
+   "joint": 0.1432,
+   "other": 0.1481,
+   "std_diff": -0.03,
+   "t": -0.97
+  },
+  {
+   "var": "Cash",
+   "joint": 0.2454,
+   "other": 0.2045,
+   "std_diff": 0.141,
+   "t": 4.43
+  },
+  {
+   "var": "lev",
+   "joint": 0.3668,
+   "other": 0.4057,
+   "std_diff": -0.216,
+   "t": -6.9
+  },
+  {
+   "var": "Age_c",
+   "joint": 1.5012,
+   "other": 2.0344,
+   "std_diff": -0.63,
+   "t": -20.14
+  },
+  {
+   "var": "Female",
+   "joint": 0.0567,
+   "other": 0.0534,
+   "std_diff": 0.017,
+   "t": 0.52
+  },
+  {
+   "var": "Edu",
+   "joint": 2.772,
+   "other": 2.6436,
+   "std_diff": 0.089,
+   "t": 2.85
+  },
+  {
+   "var": "Pay_gap",
+   "joint": 6.5675,
+   "other": 6.998,
+   "std_diff": -0.092,
+   "t": -2.97
+  },
+  {
+   "var": "IsBig10",
+   "joint": 0.7608,
+   "other": 0.7033,
+   "std_diff": 0.149,
+   "t": 4.77
+  },
+  {
+   "var": "mfg",
+   "joint": 0.6933,
+   "other": 0.6944,
+   "std_diff": -0.002,
+   "t": -0.08
+  },
+  {
+   "var": "nyears",
+   "joint": 6.5839,
+   "other": 8.1848,
+   "std_diff": -0.506,
+   "t": -16.15
+  },
+  {
+   "var": "span",
+   "joint": 6.915,
+   "other": 8.6049,
+   "std_diff": -0.514,
+   "t": -16.38
+  },
+  {
+   "var": "bal11",
+   "joint": 0.1582,
+   "other": 0.3847,
+   "std_diff": -0.527,
+   "t": -17.17
+  },
+  {
+   "var": "complete",
+   "joint": 1.0,
+   "other": 0.6074,
+   "std_diff": 1.137,
+   "t": 39.39
+  },
+  {
+   "var": "clock45_share",
+   "joint": 0.4465,
+   "other": 0.2942,
+   "std_diff": 0.811,
+   "t": 25.88
+  }
+ ],
+ "balance_max_std_ex_persistence": 0.63,
+ "ebalance": {
+  "B1": {
+   "converged": true,
+   "max_std_after": 6.094159827876626e-15,
+   "w_min": 0.201,
+   "w_max": 4.702,
+   "ess": 1634,
+   "n_control": 2402,
+   "zero_weight": 0
+  },
+  "B2": {
+   "converged": true,
+   "max_std_after": 1.5235399569691565e-14,
+   "w_min": 0.144,
+   "w_max": 4.644,
+   "ess": 1629,
+   "n_control": 2402,
+   "zero_weight": 0
+  },
+  "B3": {
+   "converged": true,
+   "max_std_after": 6.094159827876626e-15,
+   "w_min": 0.0,
+   "w_max": 21.673,
+   "ess": 428,
+   "n_control": 2402,
+   "zero_weight": 943
+  }
+ },
+ "part2": {
+  "unweighted": {
+   "joint_fall": [
+    1.192,
+    0.135,
+    8.85
+   ],
+   "below_fall": [
+    0.104,
+    0.199,
+    0.52
+   ],
+   "above_fall": [
+    0.191,
+    0.144,
+    1.32
+   ],
+   "gap": [
+    1.088,
+    0.24,
+    4.54
+   ]
+  },
+  "B1": {
+   "joint_fall": [
+    1.182,
+    0.135,
+    8.79
+   ],
+   "below_fall": [
+    0.21,
+    0.223,
+    0.94
+   ],
+   "above_fall": [
+    0.255,
+    0.155,
+    1.65
+   ],
+   "gap": [
+    0.972,
+    0.26,
+    3.74
+   ]
+  },
+  "B2": {
+   "joint_fall": [
+    1.182,
+    0.135,
+    8.78
+   ],
+   "below_fall": [
+    0.189,
+    0.233,
+    0.81
+   ],
+   "above_fall": [
+    0.271,
+    0.161,
+    1.69
+   ],
+   "gap": [
+    0.993,
+    0.268,
+    3.7
+   ]
+  },
+  "B3": {
+   "joint_fall": [
+    1.177,
+    0.135,
+    8.74
+   ],
+   "below_fall": [
+    0.504,
+    0.274,
+    1.84
+   ],
+   "above_fall": [
+    0.285,
+    0.211,
+    1.35
+   ],
+   "gap": [
+    0.673,
+    0.305,
+    2.21
+   ]
+  }
+ },
+ "part3": {
+  "persistent": {
+   "joint_fall": [
+    0.044,
+    0.235,
+    0.19
+   ],
+   "below_fall": [
+    -0.407,
+    0.248,
+    -1.64
+   ],
+   "above_fall": [
+    -0.053,
+    0.19,
+    -0.28
+   ],
+   "gap": [
+    0.451,
+    0.341,
+    1.32
+   ],
+   "n_rows": 13122,
+   "n_firms": 1203,
+   "joint_cell_firms": 279,
+   "mde80": 0.66
+  },
+  "non_persistent": {
+   "joint_fall": [
+    1.469,
+    0.16,
+    9.16
+   ],
+   "below_fall": [
+    0.816,
+    0.325,
+    2.51
+   ],
+   "above_fall": [
+    0.592,
+    0.22,
+    2.69
+   ],
+   "gap": [
+    0.652,
+    0.362,
+    1.8
+   ],
+   "n_rows": 18152,
+   "n_firms": 2963,
+   "joint_cell_firms": 1485,
+   "mde80": 0.45
+  }
+ },
+ "counts": {
+  "joint_firms": 1764,
+  "other_firms": 2402,
+  "bal11_joint_share": 0.158,
+  "bal11_other_share": 0.385,
+  "nyears_joint": 6.58,
+  "nyears_other": 8.18,
+  "complete_control_share": 0.607
+ }
+}

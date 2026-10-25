@@ -1,0 +1,4 @@
+﻿specification,N,non_balanced_fall,non_balanced_t,balanced_fall,balanced_t,gap,gap_t,note
+benchmark (year dummies x balanced interaction),31274,1.198,10.19,-0.112,-0.88,1.31,7.56,reproduces the manuscript's 1.198 / -0.112 / 1.310 with E_H in levels
+coarsened exact matching on size x SOE x age x leverage terciles,25683,0.934,6.56,-0.118,-0.93,1.052,5.52,"common support 2,721 firms, 25,683 rows"
+"entropy balancing on ten firm-mean covariates, 99th pct trimmed",31274,0.501,1.45,-0.013,-0.1,0.514,1.4,weights concentrate on listing age; 928 effective control firms
